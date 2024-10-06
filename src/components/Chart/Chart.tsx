@@ -157,6 +157,8 @@ const Chart: React.FC<ChartProps> = ({ chart, onSaveChanges, onRemove }) => {
   };
 
   useEffect(() => {
+    setIsLoading(true);
+
     if (searchText?.trim()) {
       searchSeries(searchText.trim())
         .then(setChartDataSeries)
